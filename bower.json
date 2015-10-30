@@ -1,0 +1,24 @@
+{
+  "name": "rotate-matrix",
+  "main": "rotate-matrix.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/miguelmota/rotate-matrix",
+  "authors": [
+    "Miguel Mota <hello@miguelmota.com>"
+  ],
+  "description": "Rotate a matrix in either direction.",
+  "keywords": [
+    "matrix",
+    "rotate",
+    "array",
+    "math"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT"
+}
