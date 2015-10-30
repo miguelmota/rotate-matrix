@@ -4,13 +4,9 @@
   function rotateMatrix(m, n) {
     if (!(Array.isArray(m) && m.length > 0)) {
       return [];
-    }
-
-    if (typeof n !== 'number') {
+    } else if (typeof n !== 'number') {
       n = 1;
-    }
-
-    if (n === 0) {
+    } else if (n === 0) {
       return m;
     }
 
@@ -23,7 +19,6 @@
         }
 
         mt[i] = mt[i] || [];
-
         mt[i][j] = m[j][i];
       }
 
