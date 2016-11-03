@@ -8,31 +8,40 @@
       n = 1;
     } else if (n === 0) {
       return m;
+    } else {
+      n = n % 4;
     }
 
-    var mt = [];
+    var prevMt, mt;
+    prevMt = mt = m;
 
-    for (var i = 0, cl = m.length; i < cl; i++) {
-      for (var j = 0, rl = m[i].length; j < rl; j++) {
-        if (cl !== rl) {
-          return [];
+    while (n !== 0) {
+      mt = [];
+
+      for (var i = 0, cl = prevMt.length; i < cl; i++) {
+        for (var j = 0, rl = prevMt[i].length; j < rl; j++) {
+          if (cl !== rl) {
+            return [];
+          }
+
+          mt[i] = mt[i] || [];
+          mt[i][j] = prevMt[j][i];
         }
 
-        mt[i] = mt[i] || [];
-        mt[i][j] = m[j][i];
+        if (n > 0) {
+          mt[i] = mt[i].reverse();
+        }
       }
 
-      if (n > 0) {
-        mt[i] = mt[i].reverse();
+      if (n < 0) {
+        mt.reverse();
+        n++;
       }
-    }
-
-    if (n < 0) {
-      mt.reverse();
-    }
-
-    while(n > 0 ? n-- : n++) {
-      mt = rotateMatrix(mt, n);
+      else {
+        n--;
+      }
+      
+      prevMt = mt;
     }
 
     return mt;
