@@ -36,11 +36,10 @@
       if (n < 0) {
         mt.reverse();
         n++;
-      }
-      else {
+      } else {
         n--;
       }
-      
+
       prevMt = mt;
     }
 
